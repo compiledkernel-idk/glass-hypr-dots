@@ -15,7 +15,7 @@ A minimal, glass-morphism themed Hyprland configuration.
 Clone the repository and run the installation script:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/glass-hypr-dots.git
+git clone https://github.com/compiledkernel-idk/glass-hypr-dots.git
 cd glass-hypr-dots
 ./install.sh
 ```
