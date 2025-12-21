@@ -1,5 +1,7 @@
 # Glass Hypr Dots
 
+![Preview](preview.png)
+
 A minimal, glass-morphism themed Hyprland configuration.
 
 ## Features
