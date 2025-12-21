@@ -1,0 +1,75 @@
+configuration {
+    font:                "Noto Sans Regular 10";
+    show-icons:          false;
+    icon-theme:          "Qogir";
+    display-drun:        "KeyHint";
+    drun-display-format: "{name}";
+    scroll-method:       0;
+    disable-history:     false;
+    fullscreen:          false;
+    hide-scrollbar:      true;
+    sidebar-mode:        false;
+}
+
+@theme "/dev/null"
+
+* {
+    background-color: transparent;
+    text-color:       white;
+}
+
+window {
+    transparency:     "real";
+    background-color: #00000020;
+    border:           0;
+    padding:          30px;
+    width:            800px;
+    location:         center;
+    border-radius:    20px;
+}
+
+listview {
+    lines:     15;
+    columns:   1;
+    spacing:   5px;
+    scrollbar: false;
+    border:    0;
+}
+
+element {
+    border:           0;
+    padding:          10px;
+    border-radius:    8px;
+    background-color: transparent;
+}
+
+element selected {
+    background-color: #ffffff20;
+    text-color:       white;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    padding:  0 0 10px 0;
+    spacing:  10px;
+}
+
+prompt {
+    text-color: white;
+}
+
+entry {
+    placeholder:       "Search keybindings...";
+    placeholder-color: #ffffff50;
+    text-color:        white;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+}

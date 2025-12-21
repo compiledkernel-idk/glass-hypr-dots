@@ -1,0 +1,19 @@
+configuration {
+    font: "Noto Sans Regular 12";
+    show-icons: true;
+}
+
+@theme "/dev/null"
+
+* {
+    background-color: transparent;
+    text-color:       white;
+}
+
+window {
+    transparency:     "real";
+    background-color: #00000020;
+    border:           0;
+    padding:          30px;
+    border-radius:    10px;
+}

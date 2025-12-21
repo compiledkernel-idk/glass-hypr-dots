@@ -1,0 +1,56 @@
+configuration {
+    font:            "Noto Sans Regular 10";
+    show-icons:      false;
+    icon-theme:      "Qogir";
+    scroll-method:   0;
+    disable-history: false;
+    sidebar-mode:    false;
+}
+
+@theme "/dev/null"
+
+* {
+    background-color: transparent;
+    text-color:       white;
+}
+
+window {
+    transparency:     "real";
+    background-color: #00000020;
+    border:           0;
+    padding:          15px;
+    width:            140px;
+    location:         east;
+    border-radius:    15px;
+    margin:           0 20px 0 0;
+}
+
+listview {
+    lines:     6;
+    columns:   1;
+    scrollbar: false;
+    spacing:   5px;
+}
+
+element {
+    border:           0;
+    padding:          12px;
+    border-radius:    8px;
+    background-color: transparent;
+}
+
+element selected {
+    background-color: #ffffff20;
+    text-color:       white;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+}
+
+mainbox {
+    children: [listview];
+}
