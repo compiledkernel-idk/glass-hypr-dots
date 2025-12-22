@@ -68,4 +68,39 @@ for cfg in "${CONFIGS[@]}"; do
     fi
 done
 
+echo "Setting up Firefox Glass Theme..."
+FF_DIR="$HOME/.mozilla/firefox"
+if [ -d "$FF_DIR" ]; then
+    # Find the default profile folder (usually ends in .default-release or .default)
+    PROFILE_PATH=$(find "$FF_DIR" -maxdepth 1 -type d -name "*.default-release" | head -n 1)
+    if [ -z "$PROFILE_PATH" ]; then
+        PROFILE_PATH=$(find "$FF_DIR" -maxdepth 1 -type d -name "*.default" | head -n 1)
+    fi
+
+    if [ -n "$PROFILE_PATH" ]; then
+        echo "Found Firefox profile: $PROFILE_PATH"
+        mkdir -p "$PROFILE_PATH/chrome"
+        
+        # Link userChrome.css
+        if [ -L "$PROFILE_PATH/chrome/userChrome.css" ] || [ -f "$PROFILE_PATH/chrome/userChrome.css" ]; then
+             echo "Backing up existing userChrome.css"
+             mv "$PROFILE_PATH/chrome/userChrome.css" "$PROFILE_PATH/chrome/userChrome.css.bak"
+        fi
+        ln -s "$(pwd)/firefox/chrome/userChrome.css" "$PROFILE_PATH/chrome/userChrome.css"
+
+        # Link user.js
+        if [ -L "$PROFILE_PATH/user.js" ] || [ -f "$PROFILE_PATH/user.js" ]; then
+             echo "Backing up existing user.js"
+             mv "$PROFILE_PATH/user.js" "$PROFILE_PATH/user.js.bak"
+        fi
+        ln -s "$(pwd)/firefox/user.js" "$PROFILE_PATH/user.js"
+        
+        echo "Firefox theme installed."
+    else
+        echo "No default Firefox profile found. Skipping theme installation."
+    fi
+else
+    echo "Firefox directory not found. Skipping theme installation."
+fi
+
 echo "Installation complete. Please restart Hyprland."

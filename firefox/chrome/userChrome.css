@@ -1,0 +1,76 @@
+/* Glassmorphism Theme for Firefox */
+
+:root {
+  --glass-background: rgba(20, 20, 20, 0.6);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --accent-color: #cba6f7;
+  --text-color: #ffffff;
+}
+
+/* Main window background */
+#main-window {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Toolbox (Tabs + Navbar) */
+#navigator-toolbox {
+    background-color: var(--glass-background) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: var(--glass-border) !important;
+}
+
+/* Tabs Bar */
+#TabsToolbar {
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+}
+
+.tab-background {
+    background-color: transparent !important;
+    border-radius: 10px !important;
+    margin-block: 2px !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.tab-background[selected="true"] {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.tab-background:hover:not([selected="true"]) {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* URL Bar */
+#urlbar-background {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+#urlbar[focused="true"] > #urlbar-background {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 10px rgba(203, 166, 247, 0.2) !important;
+}
+
+/* Sidebar */
+#sidebar-box {
+    background-color: var(--glass-background) !important;
+}
+
+/* Remove some separator lines for cleaner look */
+#navigator-toolbox::after {
+    border-bottom: none !important;
+}
+
+/* Window controls (Min/Max/Close) */
+.titlebar-buttonbox-container {
+    display: block !important;
+}
