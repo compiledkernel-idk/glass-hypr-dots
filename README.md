@@ -21,7 +21,7 @@ A minimal, glass-morphism themed Hyprland configuration. Designed for a clean, "
 | `SUPER` + `SPACE` | App Launcher (Rofi) |
 | `SUPER` + `N` | Toggle Status Center (SwayNC) |
 | `SUPER` + `ESC` | Open Power Menu |
-| `PRINT` | Take Screenshot |
+| `PRINTSCREEN` | Take Screenshot |
 | `SUPER` + `C` | Close Active Window |
 | `SUPER` + `V` | Toggle Floating Window |
 | `SUPER` + `P` | Pseudo Tiling |
