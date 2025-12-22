@@ -1,0 +1,101 @@
+/* Global Styles */
+* {
+  font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+/* Window Background (The Glass Effect) */
+.control-center {
+  background: rgba(20, 20, 20, 0.6); /* Dark semi-transparent background */
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Notification Background */
+.notification-row {
+  outline: none;
+  margin-top: 5px;
+}
+
+.notification {
+  background: rgba(40, 40, 40, 0.6);
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Widgets */
+.widget-title {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.widget-title > button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.widget-title > button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.widget-dnd {
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.widget-dnd > switch {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.widget-dnd > switch:checked {
+  background: #a6e3a1; /* Green-ish */
+}
+
+.widget-mpris {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Tray (Background Apps) */
+.widget-tray {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Volume & Backlight */
+.widget-volume,
+.widget-backlight {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.widget-volume > box > scale slider,
+.widget-backlight > scale slider {
+    background: #cba6f7; /* Purple accent */
+    border-radius: 10px;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+.widget-volume > box > scale trough highlight,
+.widget-backlight > scale trough highlight {
+    background: #cba6f7;
+    border-radius: 12px;
+}

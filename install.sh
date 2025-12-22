@@ -15,29 +15,41 @@ echo "Detected distribution: $DISTRO"
 # Install Dependencies
 case $DISTRO in
     arch|endeavouros|manjaro)
-        sudo pacman -S --noconfirm hyprland rofi waybar swaync kitty grim slurp wl-clipboard
+        sudo pacman -S --noconfirm hyprland rofi swaync kitty grim slurp wl-clipboard
         ;;
     fedora)
-        sudo dnf install -y hyprland rofi waybar swaync kitty grim slurp wl-clipboard
+        sudo dnf install -y hyprland rofi swaync kitty grim slurp wl-clipboard
         ;;
     debian|ubuntu|pop)
         echo "Note: Hyprland availability on Debian/Ubuntu varies. Installing available tools..."
         sudo apt update
-        sudo apt install -y rofi waybar kitty grim slurp wl-clipboard
+        sudo apt install -y rofi kitty grim slurp wl-clipboard
         # Check if user has hyprland manually installed or via non-standard repo
         if ! command -v hyprland &> /dev/null; then
              echo "Warning: Hyprland not found in standard repos. Please install it manually."
         fi
         ;;
+    opensuse-tumbleweed|opensuse-leap)
+        sudo zypper install -y hyprland rofi swaync kitty grim slurp wl-clipboard
+        ;;
+    gentoo)
+        echo "Installing dependencies for Gentoo..."
+        # Assuming standard repos or overlays are available
+        sudo emerge --ask gui-wm/hyprland x11-misc/rofi gui-apps/swaync x11-terms/kitty gui-apps/grim gui-apps/slurp gui-libs/wl-clipboard
+        ;;
     *)
         echo "Unsupported distribution for automatic dependency installation."
-        echo "Please ensure hyprland, rofi, waybar, swaync, kitty, grim, slurp, and wl-clipboard are installed."
+        echo "Please ensure hyprland, rofi, swaync, kitty, grim, slurp, and wl-clipboard are installed."
         ;;
 esac
 
 # Backup and Link Configs
-CONFIGS=("hypr" "rofi" "waybar" "swaync" "kitty")
+CONFIGS=("hypr" "rofi" "swaync" "kitty")
 CONFIG_DIR="$HOME/.config"
+
+echo "Setting up wallpapers..."
+mkdir -p "$HOME/Pictures/wallpapers"
+cp wallpapers/current_wallpaper.jpg "$HOME/Pictures/wallpapers/current_wallpaper.jpg"
 
 echo "Backing up and linking configurations..."
 
