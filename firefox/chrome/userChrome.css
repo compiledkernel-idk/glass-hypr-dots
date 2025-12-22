@@ -1,11 +1,12 @@
 /* Glassmorphism Theme for Firefox */
 
 :root {
-  --glass-background: rgba(20, 20, 20, 0.6);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* Darker background: 85% opacity black for better contrast */
+  --glass-background: rgba(10, 10, 10, 0.85);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   --accent-color: #cba6f7;
-  --text-color: #ffffff;
+  --text-color: #eeeeee;
 }
 
 /* Main window background */
@@ -17,7 +18,7 @@
 /* Toolbox (Tabs + Navbar) */
 #navigator-toolbox {
     background-color: var(--glass-background) !important;
-    backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(20px) !important;
     border-bottom: var(--glass-border) !important;
 }
 
@@ -25,6 +26,7 @@
 #TabsToolbar {
     background-color: transparent !important;
     color: var(--text-color) !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8) !important; /* Text shadow for readability */
 }
 
 .tab-background {
@@ -37,27 +39,27 @@
 }
 
 .tab-background[selected="true"] {
-    background-color: rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) !important;
 }
 
 .tab-background:hover:not([selected="true"]) {
-    background-color: rgba(255, 255, 255, 0.05) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 /* URL Bar */
 #urlbar-background {
-    background-color: rgba(0, 0, 0, 0.3) !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 12px !important;
-    backdrop-filter: blur(5px) !important;
+    backdrop-filter: blur(10px) !important;
 }
 
 #urlbar[focused="true"] > #urlbar-background {
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
     border-color: var(--accent-color) !important;
-    box-shadow: 0 0 10px rgba(203, 166, 247, 0.2) !important;
+    box-shadow: 0 0 15px rgba(203, 166, 247, 0.3) !important;
 }
 
 /* Sidebar */

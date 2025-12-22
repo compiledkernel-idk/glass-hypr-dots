@@ -1,0 +1,33 @@
+/* Dark Glass Theme for Internal Pages (New Tab, Settings, etc.) */
+
+@-moz-document url-prefix("about:") {
+    :root {
+        --in-content-page-background: rgba(15, 15, 15, 0.9) !important;
+        --in-content-text-color: #eeeeee !important;
+        --in-content-box-background: rgba(40, 40, 40, 0.6) !important;
+        --newtab-background-color: rgba(15, 15, 15, 0.9) !important;
+        --newtab-text-primary-color: #eeeeee !important;
+    }
+
+    body {
+        background-color: var(--in-content-page-background) !important;
+        color: var(--in-content-text-color) !important;
+    }
+    
+    /* Settings / Preferences */
+    .main-content {
+        background: transparent !important;
+    }
+}
+
+@-moz-document url("about:newtab"), url("about:home") {
+    body {
+        background-color: rgba(10, 10, 10, 0.85) !important; /* Matches top bar */
+        background-image: none !important;
+    }
+    
+    .top-site-outer .title {
+        color: #eeeeee !important;
+        text-shadow: 0 1px 2px black !important;
+    }
+}

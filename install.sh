@@ -88,6 +88,13 @@ if [ -d "$FF_DIR" ]; then
         fi
         ln -s "$(pwd)/firefox/chrome/userChrome.css" "$PROFILE_PATH/chrome/userChrome.css"
 
+        # Link userContent.css
+        if [ -L "$PROFILE_PATH/chrome/userContent.css" ] || [ -f "$PROFILE_PATH/chrome/userContent.css" ]; then
+             echo "Backing up existing userContent.css"
+             mv "$PROFILE_PATH/chrome/userContent.css" "$PROFILE_PATH/chrome/userContent.css.bak"
+        fi
+        ln -s "$(pwd)/firefox/chrome/userContent.css" "$PROFILE_PATH/chrome/userContent.css"
+
         # Link user.js
         if [ -L "$PROFILE_PATH/user.js" ] || [ -f "$PROFILE_PATH/user.js" ]; then
              echo "Backing up existing user.js"
