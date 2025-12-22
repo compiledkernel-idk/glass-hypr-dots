@@ -2,15 +2,35 @@
 
 ![Preview](preview.png)
 
-A minimal, glass-morphism themed Hyprland configuration.
+A minimal, glass-morphism themed Hyprland configuration. Designed for a clean, "No Bar" aesthetic where information is on-demand.
 
 ## Features
 - **Window Manager:** Hyprland
-- **Terminal:** Kitty / Alacritty
+- **Terminal:** Kitty
 - **Launcher:** Rofi
-- **Bar:** Waybar
-- **Notifications:** SwayNC
-- **Style:** Glassy, transparent, dark aesthetic (Arc-Dark/Black)
+- **Status Center:** SwayNC (Glass Theme)
+- **Power Menu:** Custom Rofi Script
+- **Style:** Glassy, transparent, deep shadows, and bouncy animations.
+
+## Keybindings
+
+| Key Combination | Action |
+|-----------------|--------|
+| `SUPER` + `Q` | Open Terminal |
+| `SUPER` + `E` | Open File Manager |
+| `SUPER` + `SPACE` | App Launcher (Rofi) |
+| `SUPER` + `N` | Toggle Status Center (SwayNC) |
+| `SUPER` + `ESC` | Open Power Menu |
+| `PRINT` | Take Screenshot |
+| `SUPER` + `C` | Close Active Window |
+| `SUPER` + `V` | Toggle Floating Window |
+| `SUPER` + `P` | Pseudo Tiling |
+| `SUPER` + `J` | Toggle Split |
+| `SUPER` + `Arrow Keys` | Move Focus |
+| `SUPER` + `0-9` | Switch Workspace |
+| `SUPER` + `SHIFT` + `0-9` | Move Window to Workspace |
+| `SUPER` + `S` | Toggle Special Workspace |
+| `SUPER` + `M` | Exit Hyprland |
 
 ## Installation
 
@@ -23,15 +43,14 @@ cd glass-hypr-dots
 ```
 
 ## Structure
-- `.config/hypr`: Hyprland configuration
+- `.config/hypr`: Hyprland configuration & scripts
 - `.config/rofi`: Application launcher theme
-- `.config/waybar`: Status bar configuration
-- `.config/swaync`: Notification center configuration
+- `.config/swaync`: Notification & Status Center configuration
+- `wallpapers`: Included wallpapers
 
 ## Requirements
 - `hyprland`
 - `rofi`
-- `waybar`
 - `swaync`
-- `kitty` (or preferred terminal)
+- `kitty`
 - `grim`, `slurp`, `wl-clipboard` (for screenshots)
