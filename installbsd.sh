@@ -14,7 +14,7 @@ doas pkg install -y \
     hyprland \
     rofi \
     swaync \
-    kitty \
+    alacritty \
     grim \
     slurp \
     wl-clipboard \
