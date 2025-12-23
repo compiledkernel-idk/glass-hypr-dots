@@ -7,10 +7,10 @@ echo "FreeBSD detected"
 ### Install Dependencies
 ### ----------------------------
 
-echo "Installing packages via pkg..."
+echo "Installing packages..."
 
-sudo pkg update
-sudo pkg install -y \
+doas pkg update
+doas pkg install -y \
     hyprland \
     rofi \
     swaync \
@@ -21,14 +21,12 @@ sudo pkg install -y \
     waybar \
     seatd
 
-echo "Packages installed."
-
 ### ----------------------------
-### Enable seatd (required for Wayland)
+### Enable seatd
 ### ----------------------------
 
-sudo sysrc seatd_enable="YES"
-sudo service seatd start
+doas sysrc seatd_enable="YES"
+doas service seatd start
 
 ### ----------------------------
 ### Wallpapers
@@ -54,7 +52,7 @@ for cfg in $CONFIGS; do
 
     if [ -d "$SOURCE" ]; then
         if [ -d "$TARGET" ] || [ -L "$TARGET" ]; then
-            echo "Backing up $TARGET to ${TARGET}.bak"
+            echo "Backing up $TARGET → ${TARGET}.bak"
             mv "$TARGET" "${TARGET}.bak"
         fi
 
@@ -91,7 +89,6 @@ if [ -d "$FF_DIR" ]; then
             ln -s "$SOURCE" "$TARGET"
         done
 
-        # user.js
         TARGET="$PROFILE_PATH/user.js"
         SOURCE="$(pwd)/firefox/user.js"
 
